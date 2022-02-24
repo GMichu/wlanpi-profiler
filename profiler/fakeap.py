@@ -273,8 +273,8 @@ class TxBeacons(multiprocessing.Process):
     def beacon(self) -> None:
         """Update and Tx Beacon Frame"""
         frame = self.beacon_frame
-        with self.sequence_number.get_lock():
-            frame.sequence_number = _Utils.next_sequence_number(self.sequence_number)
+        # with self.sequence_number.get_lock():
+        #     frame.sequence_number = _Utils.next_sequence_number(self.sequence_number)
 
         # print(f"frame.sequence_number: {frame.sequence_number}")
         # frame.sequence_number value is updating here, but not updating in pcap for some adapters
